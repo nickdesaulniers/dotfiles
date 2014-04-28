@@ -55,12 +55,13 @@ alias serve="python -m SimpleHTTPServer"
 alias e="nocorrect subl"
 alias upstream="git remote add --track master upstream "
 alias r2="cfx run --templatedir template/ --profiledir ~/mozilla/profiles/r2d2b2g/"
+alias sshn="ssh n" # See ~/.ssh/config
 alias fxos_log='adb logcat GeckoConsole:W *:F | python ~/mozilla/logcat/coloredlogcat.py'
 alias tree='nocorrect tree'
 alias pip='nocorrect pip'
 alias hg='nocorrect hg'
 alias gs='git status -sb'
-alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 source ~/.rvm/scripts/rvm # rvm
 
