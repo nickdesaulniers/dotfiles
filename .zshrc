@@ -62,6 +62,7 @@ alias pip='nocorrect pip'
 alias hg='nocorrect hg'
 alias gs='git status -sb'
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias port="lsof -i " # needs a :<port num>
 
 source ~/.rvm/scripts/rvm # rvm
 
