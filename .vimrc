@@ -7,9 +7,12 @@ syntax on
 "colorscheme solarized
 colorscheme vividchalk
 "colorscheme jellybeans
+"colorscheme lettuce
 au BufRead,BufNewFile *.jsm setf javascript
 au BufNewFile,BufRead *.r,*.R setf r
-"au BufNewFile,BufRead *.rs,*.rc setf rust
+" require syntax files
+au BufNewFile,BufRead *.vert,*.frag,*.glsl setf glsl
+au BufNewFile,BufRead *.rs,*.rc setf rust
 
 set number
 set laststatus=2
