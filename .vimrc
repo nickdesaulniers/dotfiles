@@ -44,10 +44,16 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'Raimondi/delimitMate'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-fugitive'
+""<se<C-x><C-o>
+"Bundle 'othree/html5.vim'
+"Bundle 'jgallen23/sparkup'
+"section<C-e>
+Bundle 'nickdesaulniers/sparkup'
 filetype plugin indent on     " required!
 
 " Hotkeys
 map <silent> <C-b> :CoffeeCompile<CR>
+"imap <silent> <C-c> </<C-X><C-O> " hmm
 let mapleader = ','
 map cc <leader>c<space>
 
