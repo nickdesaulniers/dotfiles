@@ -59,3 +59,6 @@ map <silent> <C-b> :CoffeeCompile<CR>
 let mapleader = ','
 map cc <leader>c<space>
 
+" For clang_complete
+set completeopt-=preview
+
