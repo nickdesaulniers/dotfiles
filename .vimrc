@@ -49,6 +49,8 @@ Bundle 'tpope/vim-fugitive'
 "Bundle 'jgallen23/sparkup'
 "section<C-e>
 Bundle 'nickdesaulniers/sparkup'
+Bundle 'Rip-Rip/clang_complete'
+Bundle 'xaizek/vim-inccomplete'
 filetype plugin indent on     " required!
 
 " Hotkeys
