@@ -35,7 +35,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git rake brew coffee web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -49,6 +49,7 @@ export PATH=$PATH:/Users/Nicholas/code/crystal/crystal/bin
 export ANDROIDFS_DIR=~/mozilla/B2G/backup-unagi
 export CCACHE_DIR=~/.ccache
 export CCACHE_COMPRESS=""
+export XPCSHELL="/Users/Nicholas/Downloads/xulrunner-sdk/bin/XUL.framework/Versions/Current"
 alias lip="ipconfig getifaddr en0"
 alias eip="curl ifconfig.me"
 alias serve="python -m SimpleHTTPServer"
@@ -63,6 +64,8 @@ alias hg='nocorrect hg'
 alias gs='git status -sb'
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias port="lsof -i " # needs a :<port num>
-
-source ~/.rvm/scripts/rvm # rvm
+alias mou="/Applications/Mou.app/Contents/MacOS/Mou"
+alias mkd="/opt/homebrew-cask/Caskroom/macdown/0.2.5.1/MacDown.app/Contents/MacOS/MacDown"
+alias src="source ~/.zshrc"
+alias fly="butterfly.server.py --unsecure --port=3000"
 
