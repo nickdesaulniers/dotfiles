@@ -61,4 +61,14 @@ map cc <leader>c<space>
 
 " For clang_complete
 set completeopt-=preview
+" found by running clang++ -x c++ -v -E /dev/null
+" and clang++ -x c++ -v -E /dev/null -stdlib=libc++
+let g:clang_user_options = '-I/usr/include/c++/4.2.1'
+let g:clang_user_options .= ' -I/usr/include/c++/4.2.1/backward'
+let g:clang_user_options .= ' -I/usr/local/include/c++/v1'
+let g:clang_user_options .= ' -I/usr/local/include'
+let g:clang_user_options .= ' -I/usr/local/lib/clang/3.7.0/include'
+let g:clang_user_options .= ' -I/usr/include'
+let g:clang_user_options .= ' -I/System/Library/Frameworks'
+let g:clang_user_options .= ' -I/Library/Frameworks'
 
