@@ -40,7 +40,7 @@ Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kchmck/vim-coffee-script.git'
-Bundle 'pangloss/vim-javascript'
+"Bundle 'pangloss/vim-javascript'
 Bundle 'Raimondi/delimitMate'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-fugitive'
@@ -51,6 +51,8 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'nickdesaulniers/sparkup'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'xaizek/vim-inccomplete'
+Bundle 'leafgarland/typescript-vim'
+Bundle 'jason0x43/vim-js-indent'
 filetype plugin indent on     " required!
 
 " Hotkeys
