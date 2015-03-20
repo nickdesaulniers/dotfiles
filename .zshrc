@@ -68,4 +68,6 @@ alias mou="/Applications/Mou.app/Contents/MacOS/Mou"
 alias mkd="/opt/homebrew-cask/Caskroom/macdown/0.2.5.1/MacDown.app/Contents/MacOS/MacDown"
 alias src="source ~/.zshrc"
 alias fly="butterfly.server.py --unsecure --port=3000"
+alias clean="git branch --merged master | grep -v master | xargs git branch -d"
 
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
