@@ -8,27 +8,36 @@ syntax on
 colorscheme vividchalk
 "colorscheme jellybeans
 "colorscheme lettuce
-au BufRead,BufNewFile *.jsm setf javascript
+
+" set language highlighting for certain file extensions
+au BufNewFile,BufRead *.jsm setf javascript
 au BufNewFile,BufRead *.r,*.R setf r
-" require syntax files
 au BufNewFile,BufRead *.vert,*.frag,*.glsl setf glsl
 au BufNewFile,BufRead *.rs,*.rc setf rust
 
 set number
 set laststatus=2
 set noerrorbells
-set cc=80
-hi ColorColumn guibg=darkred ctermbg=darkred
-
 set expandtab
 set tabstop=2
 set shiftwidth=2
 
-highlight ExtraWhitespace ctermbg=darkred guibg=darkred
+" highlight line 80 in red
+set cc=80
+hi ColorColumn ctermbg=darkred
+
+" highlight trailing whitespace in red
+hi ExtraWhitespace ctermbg=darkred
 match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+au BufWinEnter * match ExtraWhitespace /\s\+$/
+
+" highlight tabs in yellow
+hi Tabs ctermbg=yellow
+call matchadd('Tabs', '\t')
+au BufWinEnter * call matchadd('Tabs', '\t')
+
 if version >= 702
-  autocmd BufWinLeave * call clearmatches()
+  au BufWinLeave * call clearmatches()
 endif
 
 " vundle
@@ -44,10 +53,6 @@ Bundle 'kchmck/vim-coffee-script.git'
 Bundle 'Raimondi/delimitMate'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-fugitive'
-""<se<C-x><C-o>
-"Bundle 'othree/html5.vim'
-"Bundle 'jgallen23/sparkup'
-"section<C-e>
 Bundle 'nickdesaulniers/sparkup'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'xaizek/vim-inccomplete'
@@ -56,8 +61,8 @@ Bundle 'jason0x43/vim-js-indent'
 filetype plugin indent on     " required!
 
 " Hotkeys
+" `cc` to compile CoffeeScript and show in another buffer
 map <silent> <C-b> :CoffeeCompile<CR>
-"imap <silent> <C-c> </<C-X><C-O> " hmm
 let mapleader = ','
 map cc <leader>c<space>
 
