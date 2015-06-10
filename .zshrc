@@ -43,6 +43,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=$PATH:/Users/Nicholas/mozilla/adt-bundle-mac-x86_64/sdk/platform-tools
 export PATH=$PATH:/Users/Nicholas/code/crystal/crystal/bin
+export PATH=$PATH:/Users/Nicholas/mozilla/moz-git-tools
+export PATH=$PATH:/Users/Nicholas/mozilla/git-cinnabar
 
 # Custom
 . ~/.nvm/nvm.sh
@@ -50,12 +52,9 @@ export ANDROIDFS_DIR=~/mozilla/B2G/backup-unagi
 export CCACHE_DIR=~/.ccache
 export CCACHE_COMPRESS=""
 export XPCSHELL="/Users/Nicholas/Downloads/xulrunner-sdk/bin/XUL.framework/Versions/Current"
-alias lip="ipconfig getifaddr en0"
-alias eip="curl ifconfig.me"
 alias serve="python -m SimpleHTTPServer"
 alias e="nocorrect subl"
 alias upstream="git remote add --track master upstream "
-alias r2="cfx run --templatedir template/ --profiledir ~/mozilla/profiles/r2d2b2g/"
 alias sshn="ssh n" # See ~/.ssh/config
 alias fxos_log='adb logcat GeckoConsole:W *:F | python ~/mozilla/logcat/coloredlogcat.py'
 alias tree='nocorrect tree'
@@ -69,5 +68,6 @@ alias mkd="/opt/homebrew-cask/Caskroom/macdown/0.2.5.1/MacDown.app/Contents/MacO
 alias src="source ~/.zshrc"
 alias fly="butterfly.server.py --unsecure --port=3000"
 alias clean="git branch --merged master | grep -v master | xargs git branch -d"
+alias py="/usr/local/Cellar/python/2.7.9/bin/python2.7"
 
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
