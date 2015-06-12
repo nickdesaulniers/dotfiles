@@ -12,3 +12,5 @@
 	editor = /usr/bin/vim
 [push]
 	default = matching
+[alias]
+	what = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
