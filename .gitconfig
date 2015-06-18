@@ -11,5 +11,5 @@
   excludesfile = /Users/Nicholas/.gitignore_global
   editor = /usr/bin/vim
 [push]
-  default = simple
+  default = current
 
