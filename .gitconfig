@@ -1,14 +1,15 @@
 [color]
-	ui = auto
+  ui = auto
 [color "diff"]
   meta = yellow bold
   frag = magenta bold
   whitespace = red reverse
 [user]
-	name = Nick Desaulniers
-	email = ndesaulniers@mozilla.com
+  name = Nick Desaulniers
+  email = ndesaulniers@mozilla.com
 [core]
-	excludesfile = /Users/Nicholas/.gitignore_global
-	editor = /usr/bin/vim
+  excludesfile = /Users/Nicholas/.gitignore_global
+  editor = /usr/bin/vim
 [push]
-	default = matching
+  default = simple
+
