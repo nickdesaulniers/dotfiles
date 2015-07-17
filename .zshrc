@@ -40,7 +40,7 @@ plugins=(git rake brew coffee web-search)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 export PATH=$PATH:/Users/Nicholas/mozilla/adt-bundle-mac-x86_64/sdk/platform-tools
 export PATH=$PATH:/Users/Nicholas/code/crystal/crystal/bin
 export PATH=$PATH:/Users/Nicholas/mozilla/moz-git-tools
