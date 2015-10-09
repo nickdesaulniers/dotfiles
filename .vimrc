@@ -1,19 +1,15 @@
 syntax on
-"set background=dark
-"" solarized options
-"let g:solarized_termcolors = 256
-"let g:solarized_visibility = "high"
-"let g:solarized_contrast = "high"
-"colorscheme solarized
 colorscheme vividchalk
-"colorscheme jellybeans
-"colorscheme lettuce
 
 " set language highlighting for certain file extensions
 au BufNewFile,BufRead *.jsm setf javascript
 au BufNewFile,BufRead *.r,*.R setf r
 au BufNewFile,BufRead *.vert,*.frag,*.glsl setf glsl
 au BufNewFile,BufRead *.rs,*.rc setf rust
+au BufNewFile,BufRead *.md setf markdown
+
+" spellchack txt files
+au BufNewFile,BufRead *.txt set spell
 
 set number
 set laststatus=2
