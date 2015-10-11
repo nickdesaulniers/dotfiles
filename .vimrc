@@ -1,3 +1,4 @@
+" syntax highlighting
 syntax on
 colorscheme vividchalk
 
@@ -10,10 +11,12 @@ au BufNewFile,BufRead *.md setf markdown
 
 " spellchack txt files
 au BufNewFile,BufRead *.txt set spell
+au BufNewFile,BufRead CMakeLists.txt set nospell
 
+" use `:help key` to for more info
 set number
 set laststatus=2
-set noerrorbells
+set visualbell
 set expandtab
 set tabstop=2
 set shiftwidth=2
@@ -31,34 +34,33 @@ au BufWinEnter * match ExtraWhitespace /\s\+$/
 hi Tabs ctermbg=yellow
 call matchadd('Tabs', '\t')
 au BufWinEnter * call matchadd('Tabs', '\t')
-
 if version >= 702
   au BufWinLeave * call clearmatches()
 endif
 
 " vundle
-set nocompatible               " be iMproved
-filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'bling/vim-airline'
-Bundle 'kien/ctrlp.vim'
-Bundle 'kchmck/vim-coffee-script.git'
-"Bundle 'pangloss/vim-javascript'
-Bundle 'Raimondi/delimitMate'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-fugitive'
-Bundle 'nickdesaulniers/sparkup'
-Bundle 'Rip-Rip/clang_complete'
-Bundle 'xaizek/vim-inccomplete'
-Bundle 'leafgarland/typescript-vim'
-Bundle 'jason0x43/vim-js-indent'
-filetype plugin indent on     " required!
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'kchmck/vim-coffee-script.git'
+Plugin 'Raimondi/delimitMate'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'rstacruz/sparkup'
+Plugin 'Rip-Rip/clang_complete'
+Plugin 'xaizek/vim-inccomplete'
+Plugin 'jason0x43/vim-js-indent'
+call vundle#end()
+filetype plugin indent on
 
 " Hotkeys
-" `cc` to compile CoffeeScript and show in another buffer
+" `ctrl b` to compile CoffeeScript and show in another buffer
 map <silent> <C-b> :CoffeeCompile<CR>
+
+" nerd commenter, cc to comment out/in lines
 let mapleader = ','
 map cc <leader>c<space>
 
