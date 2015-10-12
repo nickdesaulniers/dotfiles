@@ -68,12 +68,22 @@ map cc <leader>c<space>
 set completeopt-=preview
 " found by running clang++ -x c++ -v -E /dev/null
 " and clang++ -x c++ -v -E /dev/null -stdlib=libc++
-let g:clang_user_options = '-I/usr/include/c++/4.2.1'
-let g:clang_user_options .= ' -I/usr/include/c++/4.2.1/backward'
-let g:clang_user_options .= ' -I/usr/local/include/c++/v1'
+let g:clang_user_options = ' -I/usr/local/include/c++/v1'
 let g:clang_user_options .= ' -I/usr/local/include'
 let g:clang_user_options .= ' -I/usr/local/lib/clang/3.7.0/include'
 let g:clang_user_options .= ' -I/usr/include'
 let g:clang_user_options .= ' -I/System/Library/Frameworks'
 let g:clang_user_options .= ' -I/Library/Frameworks'
+
+" speed up ctrl-p plugin using ag
+set wildignore+=*.dylib,*.so,*.swp,*.zip
+if executable("ag")
+  let g:ctrlp_use_caching = 0
+  let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+        \ --ignore .git
+        \ --ignore .svn
+        \ --ignore .hg
+        \ --ignore .DS_Store
+        \ -g ""'
+endif
 
