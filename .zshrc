@@ -45,6 +45,7 @@ export PATH=$PATH:/Users/Nicholas/mozilla/adt-bundle-mac-x86_64/sdk/platform-too
 export PATH=$PATH:/Users/Nicholas/code/crystal/crystal/bin
 export PATH=$PATH:/Users/Nicholas/mozilla/moz-git-tools
 export PATH=$PATH:/Users/Nicholas/mozilla/git-cinnabar
+export PATH=$PATH:/Users/Nicholas/mozilla/emscripten
 
 # Custom
 . ~/.nvm/nvm.sh
@@ -69,5 +70,9 @@ alias src="source ~/.zshrc"
 alias fly="butterfly.server.py --unsecure --port=3000"
 alias clean="git branch --merged master | grep -v master | xargs git branch -d"
 alias py="/usr/local/Cellar/python/2.7.9/bin/python2.7"
+# https://github.com/Rip-Rip/clang_complete/issues/457#issuecomment-148107557
+alias vim="vim 2>/dev/null"
+alias lip="ipconfig getifaddr en0"
+alias eip="curl ifconfig.me"
 
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

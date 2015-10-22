@@ -66,6 +66,8 @@ map cc <leader>c<space>
 
 " For clang_complete
 set completeopt-=preview
+" OSX specific
+let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib'
 " found by running clang++ -x c++ -v -E /dev/null
 " and clang++ -x c++ -v -E /dev/null -stdlib=libc++
 let g:clang_user_options = ' -I/usr/local/include/c++/v1'
