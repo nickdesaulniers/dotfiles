@@ -1,0 +1,35 @@
+[global_config]
+[keybindings]
+  cycle_prev = <Super>bracketleft
+  cycle_next = <Super>bracketright
+  zoom_in = <Super>plus
+  close_window = <Super>Q
+  zoom_out = <Super>minus
+  new_window = <Super>N
+  split_horiz = <Super><Shift>D
+  full_screen = <Super>Return
+  zoom_normal = <Super>0
+  move_tab_right = <Super><Shift>rightarrow
+  close_term = <Super>W
+  split_vert = <Super>D
+  new_tab = <Super>T
+  move_tab_left = <Super><Shift>leftarrow
+  reset = <Super>R
+  go_left = <Super>leftarrow
+  go_right = <Super>rightarrow
+[profiles]
+  [[default]]
+    use_system_font = False
+    font = Ubuntu Mono 14
+    copy_on_selection = True
+    scrollback_infinite = True
+    scrollbar_position = disabled
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]
