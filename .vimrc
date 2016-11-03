@@ -9,17 +9,20 @@ au BufNewFile,BufRead *.vert,*.frag,*.glsl setf glsl
 au BufNewFile,BufRead *.rs,*.rc setf rust
 au BufNewFile,BufRead *.md setf markdown
 
-" spellchack txt files
+" spellcheck txt files
 au BufNewFile,BufRead *.txt set spell
 au BufNewFile,BufRead CMakeLists.txt set nospell
 
 " use `:help key` to for more info
 set number
+" maybe obsolete with airline?
 set laststatus=2
 set visualbell
+" convert tab key to spaces, otherwise use ctrl+v <tab>
 set expandtab
-set tabstop=2
-set shiftwidth=2
+" Obsolete with detectindent
+"set tabstop=2
+"set shiftwidth=2
 
 " highlight line 80 in red
 set cc=80
@@ -53,6 +56,8 @@ Plugin 'rstacruz/sparkup'
 Plugin 'Rip-Rip/clang_complete'
 Plugin 'xaizek/vim-inccomplete'
 Plugin 'jason0x43/vim-js-indent'
+Plugin 'majutsushi/tagbar'
+Plugin 'roryokane/detectindent'
 call vundle#end()
 filetype plugin indent on
 
@@ -64,18 +69,18 @@ map <silent> <C-b> :CoffeeCompile<CR>
 let mapleader = ','
 map cc <leader>c<space>
 
-" For clang_complete
-set completeopt-=preview
+" clang_complete
+"set completeopt-=preview
 " OSX specific
-let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib'
-" found by running clang++ -x c++ -v -E /dev/null
-" and clang++ -x c++ -v -E /dev/null -stdlib=libc++
-let g:clang_user_options = ' -I/usr/local/include/c++/v1'
-let g:clang_user_options .= ' -I/usr/local/include'
-let g:clang_user_options .= ' -I/usr/local/lib/clang/3.7.0/include'
-let g:clang_user_options .= ' -I/usr/include'
-let g:clang_user_options .= ' -I/System/Library/Frameworks'
-let g:clang_user_options .= ' -I/Library/Frameworks'
+"let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib'
+"" found by running clang++ -x c++ -v -E /dev/null
+"" and clang++ -x c++ -v -E /dev/null -stdlib=libc++
+"let g:clang_user_options = ' -I/usr/local/include/c++/v1'
+"let g:clang_user_options .= ' -I/usr/local/include'
+"let g:clang_user_options .= ' -I/usr/local/lib/clang/3.7.0/include'
+"let g:clang_user_options .= ' -I/usr/include'
+"let g:clang_user_options .= ' -I/System/Library/Frameworks'
+"let g:clang_user_options .= ' -I/Library/Frameworks'
 
 " speed up ctrl-p plugin using ag
 set wildignore+=*.dylib,*.so,*.swp,*.zip
@@ -88,4 +93,19 @@ if executable("ag")
         \ --ignore .DS_Store
         \ -g ""'
 endif
+
+" tagbar
+" Open tagbar window with ,b
+nmap <leader>b :TagbarToggle<CR>
+
+"ctrlp
+" Open ctrlp with ,v
+nmap <leader>v :CtrlPTag<CR>
+
+" detectindent
+augroup DetectIndent
+  autocmd!
+  autocmd BufReadPost *  DetectIndent
+augroup END
+let g:detectindent_preferred_indent = 2
 

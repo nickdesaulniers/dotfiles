@@ -35,43 +35,31 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rake brew coffee web-search)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
-export PATH=$PATH:/Users/Nicholas/mozilla/adt-bundle-mac-x86_64/sdk/platform-tools
-export PATH=$PATH:/Users/Nicholas/code/crystal/crystal/bin
-export PATH=$PATH:/Users/Nicholas/mozilla/moz-git-tools
-export PATH=$PATH:/Users/Nicholas/mozilla/git-cinnabar
-export PATH=$PATH:/Users/Nicholas/mozilla/emscripten
+#export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+#export PATH=$PATH:/Users/Nicholas/mozilla/adt-bundle-mac-x86_64/sdk/platform-tools
+#export PATH=$PATH:/Users/Nicholas/code/crystal/crystal/bin
+#export PATH=$PATH:/Users/Nicholas/mozilla/moz-git-tools
+#export PATH=$PATH:/Users/Nicholas/mozilla/git-cinnabar
+#export PATH=$PATH:/Users/Nicholas/mozilla/emscripten
 
 # Custom
 . ~/.nvm/nvm.sh
-export ANDROIDFS_DIR=~/mozilla/B2G/backup-unagi
 export CCACHE_DIR=~/.ccache
 export CCACHE_COMPRESS=""
-export XPCSHELL="/Users/Nicholas/Downloads/xulrunner-sdk/bin/XUL.framework/Versions/Current"
 alias serve="python -m SimpleHTTPServer"
-alias e="nocorrect subl"
 alias upstream="git remote add --track master upstream "
-alias sshn="ssh n" # See ~/.ssh/config
-alias fxos_log='adb logcat GeckoConsole:W *:F | python ~/mozilla/logcat/coloredlogcat.py'
 alias tree='nocorrect tree'
-alias pip='nocorrect pip'
 alias hg='nocorrect hg'
 alias gs='git status -sb'
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias port="lsof -i " # needs a :<port num>
-alias mou="/Applications/Mou.app/Contents/MacOS/Mou"
-alias mkd="/opt/homebrew-cask/Caskroom/macdown/0.2.5.1/MacDown.app/Contents/MacOS/MacDown"
 alias src="source ~/.zshrc"
-alias fly="butterfly.server.py --unsecure --port=3000"
 alias clean="git branch --merged master | grep -v master | xargs git branch -d"
-alias py="/usr/local/Cellar/python/2.7.9/bin/python2.7"
-# https://github.com/Rip-Rip/clang_complete/issues/457#issuecomment-148107557
-alias vim="vim 2>/dev/null"
 alias lip="ipconfig getifaddr en0"
 alias eip="curl ifconfig.me"
 
