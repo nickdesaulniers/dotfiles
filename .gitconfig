@@ -13,3 +13,5 @@
 [push]
   default = current
 
+[am]
+	threeWay = true
