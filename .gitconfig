@@ -6,12 +6,17 @@
   whitespace = red reverse
 [user]
   name = Nick Desaulniers
-  email = ndesaulniers@mozilla.com
+  email = nick.desaulniers@gmail.com
 [core]
-  excludesfile = /Users/Nicholas/.gitignore_global
-  editor = /usr/bin/vim
+  ;excludesfile = /Users/Nicholas/.gitignore_global
+  ; ^ is unique per host...
+  editor = vim
 [push]
   default = current
-
 [am]
-	threeWay = true
+  threeWay = true
+[sendemail]
+  smtpuser = nick.desaulniers@gmail.com
+  smtpserver = smtp.googlemail.com
+  smtpencryption = tls
+  smtpserverport = 587
