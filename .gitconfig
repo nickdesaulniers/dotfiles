@@ -1,22 +1,28 @@
-[color]
-  ui = auto
 [color "diff"]
+  ; highlight more info in git diff
   meta = yellow bold
   frag = magenta bold
+  ; make trailing whitespace apparent in diffs
   whitespace = red reverse
 [user]
   name = Nick Desaulniers
   email = nick.desaulniers@gmail.com
 [core]
+  ; is unique per host...
   ;excludesfile = /Users/Nicholas/.gitignore_global
-  ; ^ is unique per host...
+  ; open vim for commits
   editor = vim
 [push]
   default = current
 [am]
   threeWay = true
+  ; fall back to three way merge when git am fails
 [sendemail]
+  ; setup for using git send-email; prompts for password
   smtpuser = nick.desaulniers@gmail.com
   smtpserver = smtp.googlemail.com
   smtpencryption = tls
   smtpserverport = 587
+[branch]
+  ; show ahead/behind for local branches from which they were branched from
+  autosetupmerge = always
