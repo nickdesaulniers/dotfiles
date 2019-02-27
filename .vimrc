@@ -20,9 +20,8 @@ set laststatus=2
 set visualbell
 " convert tab key to spaces, otherwise use ctrl+v <tab>
 set expandtab
-" Obsolete with detectindent
-"set tabstop=2
-"set shiftwidth=2
+set tabstop=2
+set shiftwidth=2
 
 " highlight line 80 in red
 set cc=80
@@ -53,11 +52,12 @@ Plugin 'kchmck/vim-coffee-script.git'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'rstacruz/sparkup'
-Plugin 'Rip-Rip/clang_complete'
 Plugin 'xaizek/vim-inccomplete'
 Plugin 'jason0x43/vim-js-indent'
 Plugin 'majutsushi/tagbar'
-Plugin 'roryokane/detectindent'
+Plugin 'Valloric/YouCompleteMe'
+"cd ~/.vim/bundle/YouCompleteMe
+"./install.py --clang-completer
 call vundle#end()
 filetype plugin indent on
 
@@ -68,19 +68,6 @@ map <silent> <C-b> :CoffeeCompile<CR>
 " nerd commenter, cc to comment out/in lines
 let mapleader = ','
 map cc <leader>c<space>
-
-" clang_complete
-"set completeopt-=preview
-" OSX specific
-"let g:clang_library_path = '/Library/Developer/CommandLineTools/usr/lib'
-"" found by running clang++ -x c++ -v -E /dev/null
-"" and clang++ -x c++ -v -E /dev/null -stdlib=libc++
-"let g:clang_user_options = ' -I/usr/local/include/c++/v1'
-"let g:clang_user_options .= ' -I/usr/local/include'
-"let g:clang_user_options .= ' -I/usr/local/lib/clang/3.7.0/include'
-"let g:clang_user_options .= ' -I/usr/include'
-"let g:clang_user_options .= ' -I/System/Library/Frameworks'
-"let g:clang_user_options .= ' -I/Library/Frameworks'
 
 " speed up ctrl-p plugin using ag
 set wildignore+=*.dylib,*.so,*.swp,*.zip
@@ -101,11 +88,3 @@ nmap <leader>b :TagbarToggle<CR>
 "ctrlp
 " Open ctrlp with ,v
 nmap <leader>v :CtrlPTag<CR>
-
-" detectindent
-augroup DetectIndent
-  autocmd!
-  autocmd BufReadPost *  DetectIndent
-augroup END
-let g:detectindent_preferred_indent = 2
-

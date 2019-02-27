@@ -60,7 +60,30 @@ alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%
 alias port="lsof -i " # needs a :<port num>
 alias src="source ~/.zshrc"
 alias clean="git branch --merged master | grep -v master | xargs git branch -d"
-alias lip="ipconfig getifaddr en0"
+if [ "$(uname -s)" = "Linux" ]; then
+  alias lip="hostname -I | tr ' ' '\n'"
+elif [ "$(uname -s)" = "Darwin" ]; then
+  alias lip="ipconfig getifaddr en0"
+fi
 alias eip="curl ifconfig.me"
+alias rake='noglob rake'
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+export EDITOR=vim
 
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source $HOME/.rvm/scripts/rvm
+export PATH="$PATH:$HOME/llvm/llvm/build/bin"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+function kpatch () {
+  patch=$1
+  shift
+  git send-email \
+      --cc-cmd="./scripts/get_maintainer.pl --norolestats $patch" \
+        $@ $patch
+}
+
+# to remove old kernels:
+# ls /boot
+# locate -b -e 4.14.0+ | xargs -p sudo rm -r; sudo update-grub
