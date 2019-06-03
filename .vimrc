@@ -55,15 +55,12 @@ Plugin 'rstacruz/sparkup'
 Plugin 'xaizek/vim-inccomplete'
 Plugin 'jason0x43/vim-js-indent'
 Plugin 'majutsushi/tagbar'
-Plugin 'Valloric/YouCompleteMe'
-"cd ~/.vim/bundle/YouCompleteMe
-"./install.py --clang-completer
 call vundle#end()
 filetype plugin indent on
 
 " Hotkeys
 " `ctrl b` to compile CoffeeScript and show in another buffer
-map <silent> <C-b> :CoffeeCompile<CR>
+"map <silent> <C-b> :CoffeeCompile<CR>
 
 " nerd commenter, cc to comment out/in lines
 let mapleader = ','
@@ -88,3 +85,13 @@ nmap <leader>b :TagbarToggle<CR>
 "ctrlp
 " Open ctrlp with ,v
 nmap <leader>v :CtrlPTag<CR>
+
+"movements
+" jj to escape back from insert mode
+inoremap jj <Esc>
+" disable arrow keys
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
