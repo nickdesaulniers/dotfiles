@@ -1,20 +1,20 @@
 [global_config]
 [keybindings]
-  cycle_prev = <Super>bracketleft
-  cycle_next = <Super>bracketright
-  zoom_in = <Super>plus
-  close_window = <Super>Q
-  zoom_out = <Super>minus
-  new_window = <Super>N
-  split_horiz = <Super><Shift>D
-  full_screen = <Super>Return
-  zoom_normal = <Super>0
+  cycle_prev = <Alt>bracketleft
+  cycle_next = <Alt>bracketright
+  zoom_in = <Alt>plus
+  close_window = <Alt>Q
+  zoom_out = <Alt>minus
+  new_window = <Alt>N
+  split_horiz = <Alt><Shift>D
+  full_screen = <Alt>Return
+  zoom_normal = <Alt>0
   move_tab_right = <Super><Shift>rightarrow
-  close_term = <Super>W
-  split_vert = <Super>D
-  new_tab = <Super>T
+  close_term = <Alt>W
+  split_vert = <Alt>D
+  new_tab = <Alt>T
   move_tab_left = <Super><Shift>leftarrow
-  reset = <Super>R
+  reset = <Alt>R
   go_left = <Super>leftarrow
   go_right = <Super>rightarrow
 [profiles]
