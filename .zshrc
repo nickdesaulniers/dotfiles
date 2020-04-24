@@ -48,7 +48,7 @@ source $ZSH/oh-my-zsh.sh
 #export PATH=$PATH:/Users/Nicholas/mozilla/emscripten
 
 # Custom
-. ~/.nvm/nvm.sh
+#. ~/.nvm/nvm.sh
 export CCACHE_DIR=~/.ccache
 export CCACHE_COMPRESS=""
 alias serve="python -m SimpleHTTPServer"

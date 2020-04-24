@@ -8,6 +8,8 @@ au BufNewFile,BufRead *.r,*.R setf r
 au BufNewFile,BufRead *.vert,*.frag,*.glsl setf glsl
 au BufNewFile,BufRead *.rs,*.rc setf rust
 au BufNewFile,BufRead *.md setf markdown
+au BufNewFile,BufRead *.ll setf llvm
+au BufNewFile,BufRead *.td setf tablegen
 
 " spellcheck txt files
 au BufNewFile,BufRead *.txt set spell
@@ -55,6 +57,7 @@ Plugin 'rstacruz/sparkup'
 Plugin 'xaizek/vim-inccomplete'
 Plugin 'jason0x43/vim-js-indent'
 Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 filetype plugin indent on
 
