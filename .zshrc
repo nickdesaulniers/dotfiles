@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 #. ~/.nvm/nvm.sh
 export CCACHE_DIR=~/.ccache
 export CCACHE_COMPRESS=""
-alias serve="python -m SimpleHTTPServer"
+alias serve="python3 -m http.server 8000"
 alias upstream="git remote add --track master upstream "
 alias tree='nocorrect tree'
 alias hg='nocorrect hg'
