@@ -115,7 +115,8 @@ function bisect () {
 function dis () {
   file=$1
   func=$2
-  gdb -batch -ex "file $1" -ex "disassemble $2"
+  #gdb -batch -ex "file $1" -ex "disassemble $2"
+  llvm-objdump -Dr --disassemble-symbols=$func $file
 }
 
 function gdbr () {
@@ -145,7 +146,7 @@ function test_llvm
 
 function first_tag () {
   tag=$1
-  git describe --contains "$tag" | sed 's/~.*//'
+  git describe --match 'v*' --contains "$tag" | sed 's/~.*//'
 }
 
 function git_committers () {
@@ -161,13 +162,18 @@ function apply () {
   fi
 }
 
-function build_android () {
-  if [[ -z "${TARGET_PRODUCT}" ]]; then
-    echo "NEED TO SET LUNCH TARGET (\$TARGET_PRODUCT)"
-    return
-  fi
-  USE_GOMA=1 make -j 46
+function recent_branches () {
+  git branch --sort=-committerdate
 }
+
+function bam () {
+  b4 am $1 -o - | git am -3
+}
+
+# Thin cursor
+echo -ne '\e[5 q'
+# magenta cursor
+echo -ne "\e]12;magenta\a"
 
 # Prevent pubkey errors from github pushes after reboot
 #[ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
@@ -176,3 +182,20 @@ function build_android () {
 # for git issues
 # $ eval "$(ssh-agent -s)"
 # $ ssh-add ~/.ssh/github_ed25519`
+
+# https://github.com/nathanchance/env/blob/d922d991fd784ac1cc9409666124870fbe41c13c/fish/functions/kgmbx.fish
+function kgmbx () {
+  mbox=$(mktemp --suffix=.mbox)
+  b4 mbox -n $mbox $1
+  neomutt -f $mbox
+}
+
+function lll () {
+  llvm-lit -vv $(find . -path "*/$1")
+}
+
+# kernel format
+# Useage: kf <sha>
+function kf () {
+  git show --format=format:'commit %h ("%s")' $1 | head -n1
+}
