@@ -1,0 +1,63 @@
+set realname = "Nick Desaulniers"
+set from = "ndesaulniers@google.com"
+#set sendmail = "/usr/bin/sendgmr"
+set edit_headers=yes
+set editor = vim
+# Sorting
+#set sort = threads
+#set sort_browser = date
+# The latest replied to thread is always on top, even if a newer thread has
+# been started.
+#set sort_aux = reverse-last-date-received
+# The latest thread is always on top, even if there's been a response to an
+# older thread.
+#set sort_aux = reverse-date-received
+#
+# Suggested by jpoimboe for neomutt.
+set use_threads = threads
+#set sort = reverse-last-date
+#set sort_aux = date
+macro index,pager ,M ":set mbox_type=mbox<enter><shell-escape>rm -f /tmp/patches.mbox<enter><tag-prefix><decrypt-copy>/tmp/patches.mbox<enter><enter>:set mbox_type=Maildir<enter>"
+# keep threads in order by the date they were started
+set sort=reverse-date-received
+
+# via https://hroy.eu/tips/mutt/first/
+bind pager <up> previous-line #scroll inside the message rather than the index
+bind pager <down> next-line
+
+# Via Johannes Wikner
+# Use Lp to apply patches.
+#macro index Lp "| gpg -d | sed -n '/^^Subject:.*/,$p' | git am\n"
+#set pipe_split = yes
+
+# http://www.mutt.org/doc/manual/#index-format
+set index_format="%Z %{%b %d} %-15.15L %s"
+set header_cache=/usr/local/google/home/ndesaulniers/Mail/neomutt_header_cache
+
+# via go/mutt
+set smtp_authenticators="oauthbearer"
+set smtp_url="smtps://`whoami`@google.com@smtp.gmail.com:465"
+set smtp_oauth_refresh_command="/google/bin/releases/mutt-eng/corp_mail_oauth2/corp_mail_oauth2.par"
+
+set hostname="google.com"
+set folder="imaps://imap.gmail.com/"
+set spoolfile="+INBOX"
+set postponed="+[Gmail]/Drafts"
+set copy=no
+set move=no
+unset record
+
+# Header cache, to speed things up.
+#set header_cache = /usr/local/google/home/$LOGNAME/Mail/mutt_header_cache
+set message_cachedir = /usr/local/google/home/$LOGNAME/Mail/mutt_message_cache
+
+# IMAP fine-tuning.
+unset imap_passive
+set imap_check_subscribed
+set mail_check=60
+
+# IMAP and SMTP authentication happens via oauth, using the helper script
+# described above. You will need to prodaccess in order for the script to work.
+set imap_authenticators="oauthbearer"
+set imap_user="`whoami`@google.com"
+set imap_oauth_refresh_command="/google/bin/releases/mutt-eng/corp_mail_oauth2/corp_mail_oauth2.par"
