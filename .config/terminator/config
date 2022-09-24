@@ -1,24 +1,32 @@
 [global_config]
 [keybindings]
-  close_term = <Alt>W
-  close_window = <Alt>Q
-  copy = <Alt>C
+  zoom_in = <Alt>plus
+  zoom_out = <Alt>minus
+  zoom_normal = <Alt>0
+  new_tab = <Alt>T
   cycle_next = <Alt>bracketright
   cycle_prev = <Alt>bracketleft
-  full_screen = <Alt>Return
-  go_left = <Super>leftarrow
-  go_right = <Super>rightarrow
-  move_tab_left = <Super><Shift>leftarrow
-  move_tab_right = <Super><Shift>rightarrow
-  new_tab = <Alt>T
-  new_window = <Alt>N
-  paste = <Alt>V
-  reset = <Alt>R
+  go_left = <Primary>Left
+  go_right = <Primary>Right
   split_horiz = <Alt><Shift>D
   split_vert = <Alt>D
-  zoom_in = <Alt>plus
-  zoom_normal = <Alt>0
-  zoom_out = <Alt>minus
+  close_term = <Alt>W
+  copy = <Alt>C
+  paste = <Alt>V
+  close_window = <Alt>Q
+  move_tab_right = <Super><Shift>rightarrow
+  move_tab_left = <Super><Shift>leftarrow
+  full_screen = <Alt>Return
+  reset = <Alt>R
+  new_window = <Alt>N
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+    font = Monospace Bold 16
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    use_system_font = False
+    copy_on_selection = True
 [layouts]
   [[default]]
     [[[child1]]]
@@ -28,11 +36,3 @@
       parent = ""
       type = Window
 [plugins]
-[profiles]
-  [[default]]
-    copy_on_selection = True
-    cursor_color = "#aaaaaa"
-    font = Monospace Bold 16
-    scrollback_infinite = True
-    scrollbar_position = hidden
-    use_system_font = False
