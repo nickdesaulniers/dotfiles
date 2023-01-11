@@ -10,9 +10,11 @@ au BufNewFile,BufRead *.rs,*.rc setf rust
 au BufNewFile,BufRead *.md setf markdown
 au BufNewFile,BufRead *.ll setf llvm
 au BufNewFile,BufRead *.td setf tablegen
+au BufNewFile,BufRead *.mir setf mir
 
 " spellcheck txt files
 au BufNewFile,BufRead *.txt set spell
+au FileType mail set spell
 au BufNewFile,BufRead CMakeLists.txt set nospell
 
 " use `:help key` to for more info
@@ -24,6 +26,8 @@ set visualbell
 set expandtab
 set tabstop=2
 set shiftwidth=2
+" newer versions of vim break backspace in insert mode...
+set backspace=indent,eol,start
 
 " highlight line 80 in red
 set cc=80
