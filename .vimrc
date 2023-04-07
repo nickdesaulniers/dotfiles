@@ -16,6 +16,7 @@ au BufNewFile,BufRead *.mir setf mir
 au BufNewFile,BufRead *.txt set spell
 au FileType mail set spell
 au BufNewFile,BufRead CMakeLists.txt set nospell
+au FileType gitcommit set spell
 
 " use `:help key` to for more info
 set number
