@@ -91,9 +91,8 @@ alias wipe="adb reboot bootloader && fastboot -w && fastboot continue"
 # Clang
 export LLVM_PATH=/android0/llvm-project
 export CLANG_PATH=$LLVM_PATH/clang
-export PATH=$PATH:$LLVM_PATH/llvm/build/bin
+export PATH=$LLVM_PATH/llvm/build/bin:$PATH
 export PATH="$PATH:/android1/arcanist/arcanist/bin"
-export PATH="$PATH:/android0/llvm-project/llvm/utils/git-svn"
 alias cd_llvm="cd $LLVM_PATH"
 alias cd_clang="cd $CLANG_PATH"
 alias build_llvm="pushd $LLVM_PATH/llvm/build && ninja; popd"
@@ -116,7 +115,7 @@ function dis () {
   file=$1
   func=$2
   #gdb -batch -ex "file $1" -ex "disassemble $2"
-  llvm-objdump -Dr --disassemble-symbols=$func $file
+  llvm-objdump -Dr --no-addresses --no-show-raw-insn --disassemble-symbols=$func $file
 }
 
 function gdbr () {
