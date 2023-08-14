@@ -74,13 +74,14 @@ alias deletebranches='git branch | grep -v "master" | xargs git branch -D'
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias open="xdg-open &>/dev/null "
-alias cim="vim"
+alias vim="lvim"
+alias cim="lvim"
 export PATH="$PATH:/usr/local/google/home/ndesaulniers/.cargo/bin"
-export EDITOR=vim
+export EDITOR=lvim
 
 # Bug in terminator
 # http://www.robmeerman.co.uk/unix/256colours
-alias vim="TERM=xterm-256color vim"
+# alias vim="TERM=xterm-256color vim"
 
 # Google specific
 export USE_CCACHE=1
