@@ -16,6 +16,9 @@ vim.cmd [[
   autocmd ColorScheme * highlight ExtraWhitespace guibg=darkred
 ]]
 
+-- expand tabs to 8 spaces
+vim.opt.tabstop = 8
+
 -- use `cc` to comment out lines or blocks
 vim.keymap.set({ "n" }, "cc", "gcc", { remap = true })
 vim.keymap.set({ "v" }, "cc", "gc", { remap = true })
