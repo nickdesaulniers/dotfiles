@@ -22,3 +22,6 @@ vim.opt.tabstop = 8
 -- use `cc` to comment out lines or blocks
 vim.keymap.set({ "n" }, "cc", "gcc", { remap = true })
 vim.keymap.set({ "v" }, "cc", "gc", { remap = true })
+
+-- set soft wrapping. Wrap lines rather than flow them off the screen.
+vim.opt.wrap = true
