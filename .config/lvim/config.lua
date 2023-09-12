@@ -14,6 +14,14 @@ vim.cmd [[
   " highlight trailing space in red
   call matchadd('ExtraWhitespace', '\s\+$')
   autocmd ColorScheme * highlight ExtraWhitespace guibg=darkred
+
+  source /android0/llvm-project/llvm/utils/vim/syntax/llvm.vim
+  " source /android0/llvm-project/llvm/utils/vim/syntax/machine-ir.vim
+  source /android0/llvm-project/llvm/utils/vim/syntax/mir.vim
+  source /android0/llvm-project/llvm/utils/vim/syntax/tablegen.vim
+  au BufNewFile,BufRead *.ll setf llvm
+  au BufNewFile,BufRead *.td setf tablegen
+  au BufNewFile,BufRead *.mir setf mir
 ]]
 
 -- expand tabs to 8 spaces
@@ -39,3 +47,5 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- stop luavim from eating mouse hightlight copy to clipboard.
 vim.opt.mouse = ""
+
+-- <leader>la to apply fixits
