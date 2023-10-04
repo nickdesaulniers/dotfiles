@@ -199,3 +199,6 @@ function lll () {
 function kf () {
   git show --format=format:'commit %h ("%s")' $1 | head -n1
 }
+
+# patatt
+export PATH="$PATH:/usr/local/google/home/ndesaulniers/.local/bin"
