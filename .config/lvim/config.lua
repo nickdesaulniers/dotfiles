@@ -35,7 +35,7 @@ vim.keymap.set({ "v" }, "cc", "gc", { remap = true })
 vim.opt.wrap = true
 
 -- hotkey `@o` to insert `dbgs() << __func__ << '\n';` on the line above cursor.
-vim.fn.setreg('o', "Odbgs() << __func__ << '\\n';")
+vim.fn.setreg('o', "Ollvm::dbgs() << __func__ << \"\\n\";")
 
 -- set spell on commit messages, .txt files, and email.
 vim.api.nvim_create_autocmd("FileType", {
