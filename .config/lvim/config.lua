@@ -15,6 +15,7 @@ vim.cmd [[
   call matchadd('ExtraWhitespace', '\s\+$')
   autocmd ColorScheme * highlight ExtraWhitespace guibg=darkred
 
+  source /android0/llvm-project/llvm/utils/vim/ftplugin/llvm.vim
   source /android0/llvm-project/llvm/utils/vim/syntax/llvm.vim
   " source /android0/llvm-project/llvm/utils/vim/syntax/machine-ir.vim
   source /android0/llvm-project/llvm/utils/vim/syntax/mir.vim
