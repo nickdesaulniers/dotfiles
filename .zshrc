@@ -68,32 +68,25 @@ fi
 alias eip="curl ifconfig.me"
 alias rake='noglob rake'
 
-# New since Google
 alias pyprof='python -m cProfile -s time '
 alias deletebranches='git branch | grep -v "master" | xargs git branch -D'
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
-alias open="xdg-open &>/dev/null "
+if [ "$(uname -s)" = "Linux" ]; then
+  alias pbcopy='xclip -selection clipboard'
+  alias pbpaste='xclip -selection clipboard -o'
+  alias open="xdg-open &>/dev/null "
+fi
 alias vim="lvim"
 alias cim="lvim"
-export PATH="$PATH:/usr/local/google/home/ndesaulniers/.cargo/bin"
 export EDITOR=lvim
 
 # Bug in terminator
 # http://www.robmeerman.co.uk/unix/256colours
 # alias vim="TERM=xterm-256color vim"
 
-# Google specific
-export USE_CCACHE=1
-export GOMA_DIR=${HOME}/goma
-#export USE_GOMA=true
-alias wipe="adb reboot bootloader && fastboot -w && fastboot continue"
-
 # Clang
-export LLVM_PATH=/android0/llvm-project
+export LLVM_PATH=/Users/ndesaulniers/llvm-project
 export CLANG_PATH=$LLVM_PATH/clang
 export PATH=$LLVM_PATH/llvm/build/bin:$PATH
-export PATH="$PATH:/android1/arcanist/arcanist/bin"
 alias cd_llvm="cd $LLVM_PATH"
 alias cd_clang="cd $CLANG_PATH"
 alias build_llvm="pushd $LLVM_PATH/llvm/build && ninja; popd"
@@ -169,19 +162,6 @@ function recent_branches () {
 function bam () {
   b4 am $1 -o - | git am -3
 }
-
-# Thin cursor
-echo -ne '\e[5 q'
-# magenta cursor
-echo -ne "\e]12;magenta\a"
-
-# Prevent pubkey errors from github pushes after reboot
-#[ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
-#ssh-add ~/.ssh/github_ed25519 &>/dev/null
-
-# for git issues
-# $ eval "$(ssh-agent -s)"
-# $ ssh-add ~/.ssh/github_ed25519`
 
 # https://github.com/nathanchance/env/blob/d922d991fd784ac1cc9409666124870fbe41c13c/fish/functions/kgmbx.fish
 function kgmbx () {
