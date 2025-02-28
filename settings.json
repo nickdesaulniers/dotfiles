@@ -15,6 +15,14 @@
     {
       "before": ["c", "c"],
       "after": ["g", "c", "c"]
+    },
+    {
+      "before": ["g", "i"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
     }
   ],
   "vim.visualModeKeyBindings": [

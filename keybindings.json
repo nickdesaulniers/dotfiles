@@ -45,6 +45,11 @@
     "command": "-editor.action.goToReferences",
     "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
   },
+  {
+    "key": "f12",
+    "command": "-editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus"
+  },
   // Add keybindings
   {
     "key": "cmd+d",
@@ -53,15 +58,5 @@
   {
     "key": "shift+cmd+d",
     "command": "workbench.action.splitEditorDown"
-  },
-  {
-    "key": "g shift+i",
-    "command": "editor.action.goToImplementation",
-    "when": "editorHasImplementationProvider && editorTextFocus"
-  },
-  {
-    "key": "g r",
-    "command": "editor.action.goToReferences",
-    "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
   },
 ]
