@@ -14,6 +14,7 @@
     "key": "ctrl+shift+tab",
     "command": "workbench.action.previousEditorInGroup"
   },
+  // Remove default keybindings
   {
     "key": "cmd+d",
     "command": "-editor.action.addSelectionToNextFindMatch",
@@ -35,11 +36,32 @@
     "when": "viewContainer.workbench.view.debug.enabled"
   },
   {
+    "key": "cmd+f12",
+    "command": "-editor.action.goToImplementation",
+    "when": "editorHasImplementationProvider && editorTextFocus"
+  },
+  {
+    "key": "shift+f12",
+    "command": "-editor.action.goToReferences",
+    "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+  },
+  // Add keybindings
+  {
     "key": "cmd+d",
     "command": "workbench.action.splitEditor"
   },
   {
     "key": "shift+cmd+d",
     "command": "workbench.action.splitEditorDown"
-  }
+  },
+  {
+    "key": "g shift+i",
+    "command": "editor.action.goToImplementation",
+    "when": "editorHasImplementationProvider && editorTextFocus"
+  },
+  {
+    "key": "g r",
+    "command": "editor.action.goToReferences",
+    "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+  },
 ]
