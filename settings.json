@@ -6,13 +6,7 @@
   "editor.detectIndentation": false,
   "workbench.colorCustomizations": {
     "editorRuler.foreground": "#ff4081",
-    "editorWhitespace.foreground": "#fbff00"
-  },
-  "[cpp]": {
-    "editor.wordBasedSuggestions": "off",
-    "editor.semanticHighlighting.enabled": true,
-    "editor.stickyScroll.defaultModel": "foldingProviderModel",
-    "editor.suggest.insertMode": "replace",
+    "editorWhitespace.foreground": "#ff0000"
   },
   "vim.leader": "<space>",
   "vim.easymotion": true,
@@ -33,4 +27,7 @@
     "-j", "16", "--malloc-trim", "--background-index",
     "--header-insertion=never"
   ],
+  "highlight.regexes": {
+    	"(\t)": [ {"backgroundColor": "#fbff00"} ]
+  }
 }
