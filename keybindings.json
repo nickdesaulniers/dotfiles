@@ -14,6 +14,19 @@
     "key": "ctrl+shift+tab",
     "command": "workbench.action.previousEditorInGroup"
   },
+  {
+    "key": "cmd+d",
+    "command": "workbench.action.splitEditor"
+  },
+  {
+    "key": "shift+cmd+d",
+    "command": "workbench.action.splitEditorDown"
+  },
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
+  },
   // Remove default keybindings
   {
     "key": "cmd+d",
@@ -50,13 +63,18 @@
     "command": "-editor.action.revealDefinition",
     "when": "editorHasDefinitionProvider && editorTextFocus"
   },
-  // Add keybindings
   {
-    "key": "cmd+d",
-    "command": "workbench.action.splitEditor"
+    "key": "cmd+k",
+    "command": "-workbench.debug.panel.action.clearReplAction",
+    "when": "focusedView == 'workbench.panel.repl.view'"
   },
   {
-    "key": "shift+cmd+d",
-    "command": "workbench.action.splitEditorDown"
+    "key": "cmd+t",
+    "command": "-workbench.action.showAllSymbols"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "-workbench.action.terminal.new",
+    "when": "terminalProcessSupported || terminalWebExtensionContributedProfile"
   },
 ]

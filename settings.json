@@ -5,6 +5,7 @@
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
   "editor.fontFamily": "Hack Nerd Font Mono",
+  "terminal.integrated.defaultProfile.linux": "zsh",
   "workbench.colorCustomizations": {
     "editorRuler.foreground": "#ff4081",
     "editorWhitespace.foreground": "#ff0000"
