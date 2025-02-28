@@ -4,6 +4,7 @@
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
+  "editor.fontFamily": "Hack Nerd Font Mono",
   "workbench.colorCustomizations": {
     "editorRuler.foreground": "#ff4081",
     "editorWhitespace.foreground": "#ff0000"
