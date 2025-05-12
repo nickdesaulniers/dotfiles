@@ -25,6 +25,10 @@
       "before": ["g", "r"],
       "commands": ["editor.action.goToReferences"]
     }
+    {
+      "before": ["g", "q"],
+      "commands": ["editor.action.formatSelection"]
+    }
   ],
   "vim.visualModeKeyBindings": [
     {
