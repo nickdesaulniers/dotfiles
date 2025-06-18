@@ -24,7 +24,7 @@
     {
       "before": ["g", "r"],
       "commands": ["editor.action.goToReferences"]
-    }
+    },
     {
       "before": ["g", "q"],
       "commands": ["editor.action.formatSelection"]
@@ -43,5 +43,10 @@
   ],
   "highlight.regexes": {
     	"(\t)": [ {"backgroundColor": "#fbff00"} ]
-  }
+  },
+  "files.associations": {
+    "*.json5": "jsonc"
+  },
+  "chat.editing.confirmEditRequestRemoval": false,
+  "vscode-pokemon.pokemonSize": "small"
 }
