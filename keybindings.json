@@ -4,7 +4,7 @@
     "key": "ctrl+v tab",
     "command": "type",
     "args": { "text": "\t" },
-    "when": "editorTextFocus && vim.mode == 'Insert'"
+    "when": "isMac && editorTextFocus && vim.mode == 'Insert'"
   },
   {
     "key": "ctrl+tab",
