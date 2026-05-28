@@ -7,6 +7,7 @@
 [user]
   name = Nick Desaulniers
   email = nick.desaulniers@gmail.com
+  ;email = ndesaulniers@google.com
 [core]
   ; is unique per host...
   ;excludesfile = /Users/Nicholas/.gitignore_global
@@ -23,6 +24,15 @@
   smtpserver = smtp.googlemail.com
   smtpencryption = tls
   smtpserverport = 587
+  ; go/sendgmr
+  ;smtpserver = /usr/bin/sendgmr
+  ;smtpuser = ndesaulniers@google.com
+  ;b4-really-reflect-via = /usr/bin/sendgmr
 [branch]
   ; show ahead/behind for local branches from which they were branched from
   autosetupmerge = always
+;[patatt]
+;  signingkey = ed25519:20260528
+;  selector = 20260528
+;[b4]
+;  send-endpoint-web = https://lkml.kernel.org/_b4_submit
