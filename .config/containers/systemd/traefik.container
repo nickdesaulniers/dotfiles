@@ -1,0 +1,25 @@
+[Unit]
+Description=Traefik Edge Router
+After=network-online.target podman.socket
+Requires=podman.socket
+
+[Container]
+Image=docker.io/library/traefik:latest
+EnvironmentFile=%h/.config/containers/systemd/traefik.env
+# Note: Quadlets handle XDG_RUNTIME_DIR automatically if using rootless
+Volume=%t/podman/podman.sock:/var/run/docker.sock:z
+Volume=%h/traefik/traefik.yml:/etc/traefik/traefik.yml:Z
+Volume=%h/traefik/acme.json:/acme.json:Z
+Volume=%h/traefik/traefik.log:/traefik.log:Z
+
+PublishPort=80:80
+PublishPort=443:443
+PublishPort=8080:8080
+
+Network=proxy.network
+
+AutoUpdate=registry
+
+[Install]
+# This tells systemd to start it on boot
+WantedBy=default.target

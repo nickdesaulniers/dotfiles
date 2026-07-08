@@ -1,0 +1,44 @@
+[Unit]
+Description=Jellyfin Media Server
+# Start after the network is up and traefik is ready
+After=network-online.target traefik.service
+Requires=traefik.service
+
+[Container]
+ContainerName=jellyfin
+Image=ghcr.io/jellyfin/jellyfin:latest
+Network=proxy.network
+
+# Volumes (%h is your home directory)
+Volume=%h/jellyfin/config:/config:Z
+Volume=%h/jellyfin/cache:/cache:Z
+Volume=/backups/nick/music:/music:ro
+Volume=/backups/nick/movies:/movies:ro
+Volume=/backups/nick/tv:/tv:ro
+
+# Traefik Labels
+Label=traefik.enable=true
+Label=traefik.http.routers.jellyfin.rule=Host(`jellyfin.desaulniers.duckdns.org`)
+Label=traefik.http.routers.jellyfin.tls=true
+Label=traefik.http.routers.jellyfin.tls.certresolver=myresolver
+Label=traefik.http.routers.jellyfin.entrypoints=websecure
+Label=traefik.http.services.jellyfin.loadbalancer.server.port=8096
+
+AutoUpdate=registry
+
+# Health check — probe Jellyfin's HTTP /health so we know it's actually SERVING,
+# not merely "running" (systemd active != Jellyfin responding). curl is in the image.
+HealthCmd=curl -fsS -m 5 http://127.0.0.1:8096/health || exit 1
+HealthInterval=30s
+HealthTimeout=10s
+HealthRetries=3
+HealthStartPeriod=90s
+HealthOnFailure=kill
+
+[Service]
+# Auto-recover: if the health check kills the container (or it crashes), restart it
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,26 @@
+[Unit]
+Description=Immich Main Server
+After=immich-db.service immich-redis.service immich-ml.service
+Requires=immich-db.service immich-redis.service immich-ml.service
+
+[Container]
+ContainerName=immich_server
+Image=ghcr.io/immich-app/immich-server:release
+Volume=/backups/immich:/data:Z
+Volume=/etc/localtime:/etc/localtime:ro
+Environment=TZ=America/Los_Angeles
+Environment=DB_HOSTNAME=immich_postgres
+Environment=REDIS_HOSTNAME=immich_redis
+Network=proxy.network
+AutoUpdate=registry
+
+# Traefik Labels
+Label=traefik.enable=true
+Label=traefik.http.routers.photos.rule=Host(`photos.desaulniers.duckdns.org`)
+Label=traefik.http.routers.photos.tls=true
+Label=traefik.http.routers.photos.tls.certresolver=myresolver
+Label=traefik.http.routers.photos.entrypoints=websecure
+Label=traefik.http.services.photos.loadbalancer.server.port=2283
+
+[Install]
+WantedBy=default.target

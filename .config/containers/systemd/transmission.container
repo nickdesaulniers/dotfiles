@@ -1,0 +1,23 @@
+[Unit]
+Description=Transmission (LinuxServer)
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+Image=lscr.io/linuxserver/transmission:latest
+ContainerName=transmission
+Environment=TZ=America/Los_Angeles
+Volume=/home/nick/transmission/config:/config
+Volume=/backups/nick/downloads:/downloads
+
+# WebUI not routed through traefik.
+PublishPort=9091:9091
+PublishPort=51413:51413
+PublishPort=51413:51413/udp
+
+[Service]
+Restart=always
+TimeoutStartSec=90
+
+[Install]
+WantedBy=default.target

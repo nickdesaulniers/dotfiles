@@ -1,0 +1,14 @@
+[Unit]
+Description=Immich ML Service
+After=network-online.target
+
+[Container]
+ContainerName=immich_machine_learning
+Image=ghcr.io/immich-app/immich-machine-learning:release
+# Use a named volume for the model cache
+Volume=immich-model-cache:/cache:Z
+Network=proxy.network
+Environment=ONNXRUNTIME_EXECUTION_PROVIDERS=CPUExecutionProvider
+
+[Install]
+WantedBy=default.target
