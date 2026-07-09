@@ -1,0 +1,24 @@
+[Unit]
+Description=Lidarr (LinuxServer)
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+Image=lscr.io/linuxserver/lidarr:latest
+ContainerName=lidarr
+Environment=PUID=0
+Environment=PGID=0
+Environment=TZ=America/Los_Angeles
+Volume=/home/nick/lidarr/config:/config:Z
+Volume=/backups/nick/music:/music:Z
+Volume=/backups/nick/downloads:/downloads:Z
+
+PublishPort=8686:8686
+Network=arr.network
+
+[Service]
+Restart=always
+TimeoutStartSec=90
+
+[Install]
+WantedBy=default.target

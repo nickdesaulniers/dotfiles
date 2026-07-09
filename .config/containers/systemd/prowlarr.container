@@ -1,0 +1,24 @@
+[Unit]
+Description=Prowlarr (LinuxServer)
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+Image=lscr.io/linuxserver/prowlarr:latest
+ContainerName=prowlarr
+# UserNS=keep-id:uid=1000,gid=1000
+# Environment=PUID=1000
+# Environment=PGID=1000
+# Environment=UMASK=002
+Environment=TZ=America/Los_Angeles
+Volume=/home/nick/prowlarr/config:/config:Z
+
+PublishPort=9696:9696
+Network=arr.network
+
+[Service]
+Restart=always
+TimeoutStartSec=90
+
+[Install]
+WantedBy=default.target

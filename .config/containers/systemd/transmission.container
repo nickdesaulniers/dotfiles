@@ -8,7 +8,12 @@ Image=lscr.io/linuxserver/transmission:latest
 ContainerName=transmission
 Environment=TZ=America/Los_Angeles
 Volume=/home/nick/transmission/config:/config
-Volume=/backups/nick/downloads:/downloads
+Volume=/backups/nick/downloads:/downloads:Z
+
+# Permissions errors without these.
+UserNS=keep-id:uid=1000,gid=1000
+Environment=PUID=1000
+Environment=PGID=1000
 
 # WebUI not routed through traefik.
 PublishPort=9091:9091
